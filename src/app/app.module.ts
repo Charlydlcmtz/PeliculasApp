@@ -3,8 +3,8 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { PeliculaImagePipe } from './pipes/pelicula-image.pipe';
+import { LoginPageComponent } from './auth/pages/login-page/login-page.component';
+import { PeliculaImagePipe } from './peliculas/pipes/pelicula-image.pipe';
 
 @NgModule({
   declarations: [
