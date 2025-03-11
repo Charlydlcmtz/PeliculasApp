@@ -34,6 +34,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              "src/assets",
+              {
+                "glob": "**/*.woff2",
+                "input": "node_modules/@fontsource-variable/onest/files/",
+                "output": "assets/fonts/"
               }
             ],
             "styles": [
@@ -42,9 +48,8 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "prerender": false,
+            "ssr": false
           },
           "configurations": {
             "production": {
@@ -107,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "97b28e6f-101b-4079-885f-818cbec34d79"
   }
 }
