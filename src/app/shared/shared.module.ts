@@ -6,6 +6,9 @@ import { IconEmailComponent } from './components/icon-email/icon-email.component
 import { IconPasswordComponent } from './components/icon-password/icon-password.component';
 import { IconUserComponent } from './components/icon-user/icon-user.component';
 import { IconMobileComponent } from './components/icon-mobile/icon-mobile.component';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ValidatorsService } from './services/validators.service';
 
 
 
@@ -20,10 +23,17 @@ import { IconMobileComponent } from './components/icon-mobile/icon-mobile.compon
   ],
   imports: [
     CommonModule,
+    RouterModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    HeaderMenuComponent,
+    FooterMenuComponent,
     IconEmailComponent,
-    IconMobileComponent,
     IconPasswordComponent,
     IconUserComponent,
+    IconMobileComponent,
+    ValidatorsService,
   ]
 })
 export class SharedModule { }

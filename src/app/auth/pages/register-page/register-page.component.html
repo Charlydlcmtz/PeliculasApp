@@ -6,149 +6,30 @@
       <form [formGroup]="registerForm" class="space-y-4">
         <div class="flex justify-between gap-x-4">
           <div class="relative w-auto my-3">
-            <label for="nombre" class="block mb-2 text-sm font-bold text-gray-900">Nombre:</label>
-            <div class="relative">
-              <!-- iconos que sean acorde al input -->
-              <icon-user class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
-              <input id="nombre" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10"
-                placeholder="nombre" formControlName="nombre"
-              >
-              <div
-                *ngIf="isValidFieldUser('nombre')"
-                class="absolute top-full left-0 mt-1 w-full p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                role="alert"
-              >
-                {{ getFieldErrorUser('nombre') }}
-              </div>
-            </div>
-          </div>
-          <div class="relative w-auto my-3">
             <label for="username" class="block mb-2 text-sm font-bold text-gray-900">Username:</label>
             <div class="relative">
               <!-- iconos que sean acorde al input -->
-              <icon-user class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              <!-- <icon-user class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" /> -->
               <input id="username" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10"
-                placeholder="username" formControlName="username"
-              >
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-between gap-x-4">
-          <div class="relative w-auto my-3">
-            <label for="apellido_p" class="block mb-2 text-sm font-bold text-gray-900">Apellido Paterno:</label>
-            <div class="relative">
-              <!-- iconos que sean acorde al input -->
-              <icon-user class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
-              <input id="apellido_p" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10" placeholder="Apellido Paterno" formControlName="apellido_p"
+                placeholder="Username" formControlName="nombreUsuario"
               >
               <div
-                *ngIf="isValidFieldUser('apellido_p')"
+                *ngIf="isValidFieldUser('nombreUsuario')"
                 class="absolute top-full left-0 mt-1 w-full p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                 role="alert"
               >
-                {{ getFieldErrorUser('apellido_p') }}
+                {{ getFieldErrorUser('nombreUsuario') }}
               </div>
             </div>
           </div>
           <div class="relative w-auto my-3">
-            <label for="apellido_m" class="block mb-2 text-sm font-bold text-gray-900">Apellido Materno</label>
+            <label for="nombre" class="block mb-2 text-sm font-bold text-gray-900">Nombre:</label>
             <div class="relative">
               <!-- iconos que sean acorde al input -->
-              <icon-user class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
-              <input id="apellido_m" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10" placeholder="Apellido Materno" formControlName="apellido_m"
+              <!-- <icon-user class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" /> -->
+              <input id="nombre" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10"
+                placeholder="Nombre" formControlName="nombre"
               >
-              <div
-                *ngIf="isValidFieldUser('apellido_m')"
-                class="absolute top-full left-0 mt-1 w-full p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                role="alert"
-              >
-                {{ getFieldErrorUser('apellido_m') }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-between gap-x-4">
-          <div class="relative w-auto my-3">
-            <label for="telefono" class="block mb-2 text-sm font-bold text-gray-900">Teléfono</label>
-            <div class="relative">
-              <!-- iconos que sean acorde al input -->
-              <icon-mobile class="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500" />
-              <input id="telefono" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10"
-                placeholder="Teléfono" formControlName="telefono"
-              >
-              <div
-                *ngIf="isValidFieldUser('telefono')"
-                class="absolute top-full left-0 mt-1 w-full p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                role="alert"
-              >
-                {{ getFieldErrorUser('telefono') }}
-              </div>
-            </div>
-          </div>
-          <div class="relative w-auto my-3">
-            <label for="no_empleado" class="block mb-2 text-sm font-bold text-gray-900">No° Empleado:</label>
-            <div class="relative">
-              <!-- icono acorde al input -->
-              <icon-employ class="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500" />
-              <input id="no_empleado" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10"
-                placeholder="No° Empleado" formControlName="no_empleado"
-              >
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-between gap-x-4">
-          <div class="relative w-auto my-3">
-            <label for="texto_imagen" class="block mb-2 text-sm font-bold text-gray-900">texto / Imagen</label>
-            <label class="block mb-2 text-sm text-gray-900">
-              <input type="checkbox" (click)="format_image()" value="" class="sr-only peer">
-              <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-            </label>
-          </div>
-          <div class="relative w-auto my-3" *ngIf="typeImage">
-            <label class="block mb-6 text-sm text-gray-900 font-bold dark:text-white" for="img_usuario_file">Foto Usuario:</label>
-            <div class="relative">
-              <!-- icono acorde al input -->
-              <input (change)="onFileSelected($event, 'image')" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50
-                dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="img_usuario_file" type="file"
-                formControlName="img_user_file"
-              >
-            </div>
-          </div>
-          <div class="relative w-auto my-3" *ngIf="!typeImage">
-            <label class="block mb-2 text-sm text-gray-900 font-bold dark:text-white" for="img_usuario_file">Foto Usuario:</label>
-            <div class="relative">
-              <!-- icono acorde al input -->
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"
-                fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"
-                stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-photo-scan
-                absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M15 8h.01" />
-                <path d="M6 13l2.644 -2.644a1.21 1.21 0 0 1 1.712 0l3.644 3.644" />
-                <path d="M13 13l1.644 -1.644a1.21 1.21 0 0 1 1.712 0l1.644 1.644" />
-                <path d="M4 8v-2a2 2 0 0 1 2 -2h2" /><path d="M4 16v2a2 2 0 0 0 2 2h2" />
-                <path d="M16 4h2a2 2 0 0 1 2 2v2" />
-                <path d="M16 20h2a2 2 0 0 0 2 -2v-2" />
-              </svg>
-              <input id="img_users" type="text" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10" placeholder="Imagen Usuario"
-                formControlName="img_user"
-              >
-            </div>
-          </div>
-        </div>
-        <div class="relative w-auto my-3">
-          <label for="correo" class="block mb-2 text-sm font-bold text-gray-900">Correo:</label>
-          <div class="relative">
-            <!-- icono acorde al input -->
-             <icon-email class="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500" />
-            <input id="correo" type="email" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10" placeholder="Correo" formControlName="correo">
-            <div
-              *ngIf="isValidFieldUser('correo')"
-              class="absolute top-full left-0 mt-1 w-full p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-              role="alert"
-            >
-              {{ getFieldErrorUser('correo') }}
             </div>
           </div>
         </div>
@@ -156,8 +37,7 @@
           <div class="relative w-auto my-3">
             <label for="password" class="block mb-2 text-sm font-bold text-gray-900">Contraseña:</label>
             <div class="relative">
-  
-              <icon-password class="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              <!-- <icon-password class="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500" /> -->
               <input id="password" type="password" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10" placeholder="********" formControlName="password">
               <div
                 *ngIf="isValidFieldUser('password')"
@@ -171,7 +51,7 @@
           <div class="relative w-auto my-3">
             <label for="password_confirm" class="block mb-2 text-sm font-bold text-gray-900">Confirmar Contraseña:</label>
             <div class="relative">
-              <icon-password />
+              <!-- <icon-password /> -->
               <input id="password_confirm" type="password" class="bg-gray-100 border border-gray-300 text-gray-900 rounded block w-full p-2 pl-10" placeholder="********" formControlName="password_confirm">
               <div
                 *ngIf="isValidFieldUser('password_confirm')"

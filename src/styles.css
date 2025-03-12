@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 @import "@fontsource/onest"; /* Importa la fuente desde node_modules */
 /* Si necesitas la versión variable, usa: @import "@fontsource-variable/onest"; */
 
@@ -7,6 +7,6 @@
 @tailwind utilities;
 
 html {
-    font-family: "Onest", sans-serif;
-    scroll-behavior: smooth;
+  font-family: "Onest", sans-serif;
+  scroll-behavior: smooth;
 }

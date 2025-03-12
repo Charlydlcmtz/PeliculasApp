@@ -49,7 +49,9 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "prerender": false,
-            "ssr": false
+            "ssr": {
+              "entry": "src/main.server.ts"
+            }
           },
           "configurations": {
             "production": {
