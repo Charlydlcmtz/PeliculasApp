@@ -8,25 +8,25 @@ const routes: Routes = [
     path: 'auth',
     // Guards
     canActivate: [ isNotAuthenticatedGuard ],
-    //loadChildren: () =>
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: 'dashboard',
     // Guards
     canActivate: [ isAuthenticatedGuard ],
-    //loadChildren: () =>
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
   },
   {
     path: 'peliculas',
     // Guards
     canActivate: [ isAuthenticatedGuard ],
-    //loadChildren: () =>
+    loadChildren: () => import('./peliculas/pelicula.module').then(m => m.PeliculaModule),
   },
   {
     path: 'usuarios',
     //Guards
     canActivate: [ isAuthenticatedGuard ],
-    //locadChildren:
+    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
   },
   {
     path: '**',

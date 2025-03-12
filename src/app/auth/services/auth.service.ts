@@ -63,7 +63,7 @@ export class AuthService {
   }
 
   checkAuthStatus(): Observable<boolean> {
-    const url = `${this.baseUrl}/check-token`;
+    const url = `${this.baseUrl}/usuarios/check-token`;
 
     if (typeof window === 'undefined') {
       return of(false);
